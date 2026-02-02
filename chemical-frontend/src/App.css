@@ -1,0 +1,41 @@
+.message {
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+  animation: slideIn 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.message.error {
+  background: rgba(248, 81, 73, 0.1);
+  color: #f85049;
+  border-left: 4px solid #f85049;
+  box-shadow: 0 4px 12px rgba(248, 80, 73, 0.1);
+}
+
+.message.success {
+  background: rgba(26, 127, 55, 0.1);
+  color: #3fb950;
+  border-left: 4px solid #3fb950;
+  box-shadow: 0 4px 12px rgba(63, 185, 80, 0.1);
+}
+
+.message.info {
+  background: rgba(88, 166, 255, 0.1);
+  color: #58a6ff;
+  border-left: 4px solid #58a6ff;
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

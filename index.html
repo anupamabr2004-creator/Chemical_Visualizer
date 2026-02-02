@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .toggle-form button {
+            background: none;
+            color: #667eea;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .toggle-form button:hover {
+            transform: none;
+            color: #764ba2;
+        }
+
+        .error {
+            background-color: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success {
+            background-color: #efe;
+            color: #3c3;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .dashboard-header h2 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .logout-btn {
+            background: #ff6b6b;
+            padding: 10px 20px;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .file-upload {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="file"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .upload-btn {
+            background: #51cf66;
+            padding: 10px 20px;
+            width: auto;
+            font-size: 14px;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .upload-progress {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .datasets-list {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .dataset-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dataset-info h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .dataset-info p {
+            color: #666;
+            font-size: 13px;
+            margin: 3px 0;
+        }
+
+        .dataset-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 12px;
+            width: auto;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-analyze {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-export {
+            background: #ffd93d;
+            color: #333;
+        }
+
+        .btn-small:hover {
+            opacity: 0.9;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .analysis-results {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .analysis-results.active {
+            display: block;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .type-distribution {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .type-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .type-item:last-child {
+            border-bottom: none;
+        }
+
+        .type-name {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .type-count {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+
+            .logo h1 {
+                font-size: 22px;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .file-upload {
+                flex-direction: column;
+            }
+
+            .dataset-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dataset-actions {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .btn-small {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth Forms -->
+    <div class="container" id="authContainer">
+        <div class="card">
+            <div class="logo">
+                <h1>⚗️ Chemical Visualizer</h1>
+                <p>Analyze equipment data with ease</p>
+            </div>
+
+            <div id="errorMsg" class="error"></div>
+            <div id="successMsg" class="success"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Login</h2>
+
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit">Login</button>
+
+                <div class="toggle-form">
+                    Don't have an account?
+                    <button type="button" onclick="toggleForms()">Register</button>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="hidden">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Register</h2>
+
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+                    <input type="text" id="registerUsername" placeholder="Choose a username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+
+                <button type="submit">Register</button>
+
+                <div class="toggle-form">
+                    Already have an account?
+                    <button type="button" onclick="toggleForms()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container dashboard" id="dashboardContainer">
+        <div class="card">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="section">
+                <h3>📤 Upload CSV</h3>
+                <div class="file-upload">
+                    <input type="file" id="csvFile" accept=".csv" required>
+                    <button type="button" class="upload-btn" onclick="uploadCSV()">Upload</button>
+                </div>
+                <div class="upload-progress" id="uploadProgress">
+                    <span class="spinner"></span>
+                    <span>Uploading...</span>
+                </div>
+            </div>
+
+            <!-- Datasets Section -->
+            <div class="section">
+                <h3>📊 My Datasets</h3>
+                <div class="datasets-list" id="datasetsList">
+                    <p style="color: #999; text-align: center;">No datasets uploaded yet</p>
+                </div>
+            </div>
+
+            <!-- Analysis Section -->
+            <div class="section">
+                <h3>🔬 Analyze Dataset</h3>
+                <select id="datasetSelect" onchange="analyzeDataset()">
+                    <option value="">Select a dataset to analyze...</option>
+                </select>
+
+                <div class="analysis-results" id="analysisResults">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Equipment</div>
+                            <div class="stat-value" id="totalEquipment">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Avg Flowrate (L/min)</div>
+                            <div class="stat-value" id="avgFlowrate">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Avg Pressure (bar)</div>
+                            <div class="stat-value" id="avgPressure">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Avg Temperature (°C)</div>
+                            <div class="stat-value" id="avgTemperature">-</div>
+                        </div>
+                    </div>
+
+                    <div class="type-distribution">
+                        <h4 style="margin-bottom: 15px; color: #333;">Equipment Type Distribution</h4>
+                        <div id="typeDistribution"></div>
+                    </div>
+
+                    <button type="button" class="upload-btn" style="margin-top: 20px; background: #ff922b;" onclick="exportPDF()" id="exportBtn">📥 Export as PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+        let authToken = localStorage.getItem('authToken');
+        let currentDatasetId = null;
+
+        // Initialize app
+        if (authToken) {
+            showDashboard();
+            loadDatasets();
+        } else {
+            showAuth();
+        }
+
+        function toggleForms() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('registerForm').classList.toggle('hidden');
+            clearMessages();
+        }
+
+        function showMessage(message, type) {
+            const errorDiv = document.getElementById('errorMsg');
+            const successDiv = document.getElementById('successMsg');
+
+            if (type === 'error') {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+                successDiv.style.display = 'none';
+            } else {
+                successDiv.textContent = message;
+                successDiv.style.display = 'block';
+                errorDiv.style.display = 'none';
+            }
+        }
+
+        function clearMessages() {
+            document.getElementById('errorMsg').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'none';
+        }
+
+        function showAuth() {
+            document.getElementById('authContainer').style.display = 'block';
+            document.getElementById('dashboardContainer').classList.remove('active');
+        }
+
+        function showDashboard() {
+            document.getElementById('authContainer').style.display = 'none';
+            document.getElementById('dashboardContainer').classList.add('active');
+        }
+
+        // Register
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/register/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('Registration successful! Now login with your credentials.', 'success');
+                    setTimeout(() => {
+                        document.getElementById('registerUsername').value = '';
+                        document.getElementById('registerPassword').value = '';
+                        toggleForms();
+                    }, 2000);
+                } else {
+                    showMessage(data.error || 'Registration failed', 'error');
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                showMessage('Error: ' + error.message + '. Make sure backend is running on http://localhost:8000', 'error');
+            }
+        });
+
+        // Login
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/login/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    authToken = data.access;
+                    localStorage.setItem('authToken', authToken);
+                    localStorage.setItem('username', data.username);
+                    showMessage('Login successful!', 'success');
+                    setTimeout(() => {
+                        showDashboard();
+                        loadDatasets();
+                    }, 1000);
+                } else {
+                    showMessage(data.error || 'Login failed', 'error');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showMessage('Error: ' + error.message + '. Make sure backend is running on http://localhost:8000', 'error');
+            }
+        });
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('username');
+            authToken = null;
+            currentDatasetId = null;
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            showAuth();
+        }
+
+        // Upload CSV
+        async function uploadCSV() {
+            const fileInput = document.getElementById('csvFile');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                showMessage('Please select a file', 'error');
+                return;
+            }
+
+            if (!file.name.endsWith('.csv')) {
+                showMessage('Please upload a CSV file', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            document.getElementById('uploadProgress').style.display = 'block';
+
+            try {
+                const response = await fetch(`${API_BASE}/equipment/upload/`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${authToken}` },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('File uploaded successfully!', 'success');
+                    fileInput.value = '';
+                    document.getElementById('uploadProgress').style.display = 'none';
+                    loadDatasets();
+                } else {
+                    showMessage(data.detail || 'Upload failed', 'error');
+                }
+            } catch (error) {
+                showMessage('Error: ' + error.message, 'error');
+            } finally {
+                document.getElementById('uploadProgress').style.display = 'none';
+            }
+        }
+
+        // Load Datasets
+        async function loadDatasets() {
+            try {
+                const response = await fetch(`${API_BASE}/equipment/datasets/`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load datasets: ' + response.statusText);
+                }
+
+                const datasets = await response.json();
+
+                const listDiv = document.getElementById('datasetsList');
+                const selectDiv = document.getElementById('datasetSelect');
+
+                if (datasets.length === 0) {
+                    listDiv.innerHTML = '<p style="color: #999; text-align: center;">No datasets uploaded yet</p>';
+                    selectDiv.innerHTML = '<option value="">Select a dataset to analyze...</option>';
+                    return;
+                }
+
+                let html = '';
+                let selectHtml = '<option value="">Select a dataset to analyze...</option>';
+
+                datasets.forEach(dataset => {
+                    const date = new Date(dataset.uploaded_at).toLocaleDateString();
+                    html += `
+                        <div class="dataset-item">
+                            <div class="dataset-info">
+                                <h4>${dataset.filename}</h4>
+                                <p>Uploaded: ${date}</p>
+                                <p>Equipment: ${dataset.total_equipment} items</p>
+                            </div>
+                            <div class="dataset-actions">
+                                <button class="btn-small btn-analyze" onclick="analyzeDatasetById(${dataset.id})">Analyze</button>
+                                <button class="btn-small btn-export" onclick="exportDatasetPDF(${dataset.id})">Export PDF</button>
+                            </div>
+                        </div>
+                    `;
+                    selectHtml += `<option value="${dataset.id}">${dataset.filename}</option>`;
+                });
+
+                listDiv.innerHTML = html;
+                selectDiv.innerHTML = selectHtml;
+            } catch (error) {
+                console.error('Error loading datasets:', error);
+                showMessage('Error loading datasets: ' + error.message, 'error');
+            }
+        }
+
+        // Analyze Dataset
+        function analyzeDatasetById(datasetId) {
+            document.getElementById('datasetSelect').value = datasetId;
+            analyzeDataset();
+        }
+
+        function analyzeDataset() {
+            const datasetId = document.getElementById('datasetSelect').value;
+
+            if (!datasetId) {
+                document.getElementById('analysisResults').classList.remove('active');
+                return;
+            }
+
+            // Find the dataset in the list
+            const datasets = Array.from(document.getElementById('datasetSelect').options);
+            const selectedIndex = document.getElementById('datasetSelect').selectedIndex;
+
+            fetch(`${API_BASE}/equipment/datasets/`, {
+                headers: { 'Authorization': `Bearer ${authToken}` }
+            })
+            .then(res => res.json())
+            .then(datasets => {
+                const dataset = datasets.find(d => d.id == datasetId);
+                if (dataset) {
+                    currentDatasetId = datasetId;
+                    displayAnalysis(dataset);
+                }
+            });
+        }
+
+        function displayAnalysis(dataset) {
+            document.getElementById('totalEquipment').textContent = dataset.total_equipment;
+            document.getElementById('avgFlowrate').textContent = dataset.average_flowrate;
+            document.getElementById('avgPressure').textContent = dataset.average_pressure;
+            document.getElementById('avgTemperature').textContent = dataset.average_temperature;
+
+            const typeDiv = document.getElementById('typeDistribution');
+            let typeHtml = '';
+
+            for (const [type, count] of Object.entries(dataset.type_distribution)) {
+                typeHtml += `
+                    <div class="type-item">
+                        <span class="type-name">${type}</span>
+                        <span class="type-count">${count}</span>
+                    </div>
+                `;
+            }
+
+            typeDiv.innerHTML = typeHtml;
+            document.getElementById('analysisResults').classList.add('active');
+        }
+
+        // Export PDF
+        async function exportDatasetPDF(datasetId) {
+            if (!authToken) {
+                showMessage('Please login first', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/equipment/datasets/${datasetId}/export-pdf/`, {
+                    method: 'GET',
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+
+                if (!response.ok) {
+                    showMessage('Failed to export PDF: ' + response.statusText, 'error');
+                    return;
+                }
+
+                // Create blob from response and download
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `dataset-${datasetId}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                showMessage('Error exporting PDF: ' + error.message, 'error');
+            }
+        }
+
+        function exportPDF() {
+            if (!currentDatasetId) {
+                showMessage('Please select a dataset first', 'error');
+                return;
+            }
+
+            exportDatasetPDF(currentDatasetId);
+        }
+    </script>
+</body>
+</html>

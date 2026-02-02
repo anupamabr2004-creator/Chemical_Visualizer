@@ -1,0 +1,21 @@
+Equipment,Type,Flowrate,Pressure,Temperature
+Pump-001,Centrifugal,150.5,2.5,45.2
+Pump-002,Positive Displacement,120.3,3.2,48.1
+Pump-003,Centrifugal,165.8,2.8,44.5
+Valve-001,Ball,0.0,2.5,46.3
+Valve-002,Gate,0.0,3.1,47.8
+Valve-003,Check,0.0,2.6,45.9
+Heat Exchanger-001,Plate,200.5,1.8,65.2
+Heat Exchanger-002,Tube,185.2,2.0,63.5
+Heat Exchanger-003,Plate,210.3,1.9,64.8
+Filter-001,Cartridge,120.0,1.5,42.1
+Filter-002,Bag,115.5,1.6,41.8
+Filter-003,Cartridge,125.2,1.4,42.5
+Reactor-001,Batch,50.0,5.0,60.2
+Reactor-002,Continuous,55.5,5.2,61.0
+Reactor-003,Batch,48.8,4.9,59.8
+Tank-001,Storage,0.0,0.5,35.2
+Tank-002,Buffer,0.0,0.6,34.8
+Tank-003,Storage,0.0,0.5,35.5
+Compressor-001,Reciprocating,300.0,8.5,75.2
+Compressor-002,Rotary,320.5,8.2,74.8

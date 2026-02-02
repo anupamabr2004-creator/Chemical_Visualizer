@@ -1,0 +1,7 @@
+PyQt5==5.15.9
+PyQt5-sip==12.13.0
+requests==2.31.0
+matplotlib==3.8.2
+numpy==1.26.3
+pandas==2.1.4
+reportlab==4.0.9

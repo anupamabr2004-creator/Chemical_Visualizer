@@ -1,0 +1,16 @@
+Equipment,Type,Flowrate,Pressure,Temperature
+Pump-001,Centrifugal,125.5,3.2,28.5
+Pump-002,Positive Displacement,95.0,4.1,32.0
+Pump-003,Centrifugal,110.0,3.5,27.5
+Valve-001,Check Valve,140.0,2.8,25.0
+Valve-002,Ball Valve,130.5,3.0,26.0
+Compressor-001,Rotary,85.0,5.5,45.0
+Compressor-002,Rotary,90.5,5.2,43.5
+Heat Exchanger-001,Plate,150.0,2.5,20.0
+Heat Exchanger-002,Tube,145.5,2.7,22.0
+Tank-001,Storage,200.0,1.5,18.0
+Tank-002,Pressure,210.5,4.0,24.0
+Motor-001,Electric,75.0,0.5,30.0
+Motor-002,Electric,80.5,0.6,32.0
+Filter-001,Cartridge,120.0,1.8,22.0
+Filter-002,Sand,115.5,1.6,20.5

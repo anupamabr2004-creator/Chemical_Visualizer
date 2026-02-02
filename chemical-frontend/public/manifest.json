@@ -1,0 +1,9 @@
+{
+  "short_name": "Chemical Visualizer",
+  "name": "Chemical Visualizer App",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff"
+}

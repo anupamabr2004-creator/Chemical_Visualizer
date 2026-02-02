@@ -1,0 +1,12 @@
+Type,Flowrate,Pressure,Temperature
+Pump,45.5,2.2,24.0
+Pump,50.2,2.4,25.5
+Pump,48.8,2.3,24.8
+Reactor,28.0,5.2,62.0
+Reactor,31.5,5.8,68.5
+Reactor,29.8,5.5,65.2
+Heat Exchanger,95.0,1.3,28.0
+Heat Exchanger,102.0,1.6,32.0
+Heat Exchanger,98.5,1.4,30.0
+Compressor,75.0,8.5,35.0
+Compressor,78.0,8.7,36.5
