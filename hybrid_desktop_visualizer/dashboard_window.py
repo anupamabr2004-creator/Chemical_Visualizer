@@ -103,13 +103,13 @@ class DashboardWindow(QMainWindow):
         title_font.setPointSize(24)
         title_font.setBold(True)
         title.setFont(title_font)
-        title.setStyleSheet("color: #1e3a8a;")
+        title.setStyleSheet("color: black;")
         header_layout.addWidget(title)
         
         header_layout.addStretch()
         
         welcome = QLabel(f"Welcome, {self.username}!")
-        welcome.setStyleSheet("color: #64748b; font-weight: 600; font-size: 13px;")
+        welcome.setStyleSheet("color: black; font-weight: 600; font-size: 13px;")
         header_layout.addWidget(welcome)
         
         logout_btn = QPushButton("Logout")
@@ -136,9 +136,10 @@ class DashboardWindow(QMainWindow):
         upload_card = QWidget()
         upload_card.setStyleSheet("""
             QWidget {
-                background-color: #ffffff;
+                background-color: white;
                 border: 1px solid #e6eef6;
                 border-radius: 8px;
+                color:black;
             }
         """)
         upload_card.setMaximumHeight(120)
@@ -147,18 +148,18 @@ class DashboardWindow(QMainWindow):
         upload_layout.setSpacing(12)
         
         upload_title = QLabel("Upload CSV File")
-        upload_title.setStyleSheet("color: #0b1220; font-weight: 700; font-size: 14px;")
+        upload_title.setStyleSheet("color: black; font-weight: 700; font-size: 14px;")
         upload_layout.addWidget(upload_title)
         
         help_text = QLabel("CSV format required: Equipment, Type, Flowrate, Pressure, Temperature")
-        help_text.setStyleSheet("color: #94a3b8; font-size: 11px; font-weight: 500; margin-bottom: 8px;")
+        help_text.setStyleSheet("color: black; font-size: 11px; font-weight: 500; margin-bottom: 8px;")
         upload_layout.addWidget(help_text)
         
         file_layout = QHBoxLayout()
         file_layout.setSpacing(12)
         
         self.file_label = QLabel("No file selected")
-        self.file_label.setStyleSheet("color: #64748b; font-size: 12px; padding: 10px;")
+        self.file_label.setStyleSheet("color: black; font-size: 12px; padding: 10px;")
         file_layout.addWidget(self.file_label, 1)
         
         self.file_input = QPushButton("Select File")
@@ -220,11 +221,15 @@ class DashboardWindow(QMainWindow):
         self.datasets_table.setColumnCount(5)
         self.datasets_table.setHorizontalHeaderLabels(["Filename", "Uploaded", "Equipment", "Actions", ""])
         self.datasets_table.horizontalHeader().setStretchLastSection(False)
-        self.datasets_table.setColumnWidth(0, 250)
-        self.datasets_table.setColumnWidth(1, 130)
-        self.datasets_table.setColumnWidth(2, 110)
-        self.datasets_table.setColumnWidth(3, 220)
-        self.datasets_table.setMaximumHeight(200)
+        self.datasets_table.setColumnWidth(0, 260)  # Filename
+        self.datasets_table.setColumnWidth(1, 130)  # Uploaded
+        self.datasets_table.setColumnWidth(2, 100)  # Equipment
+        self.datasets_table.setColumnWidth(3, 280)  # Actions
+
+        self.datasets_table.verticalHeader().setDefaultSectionSize(56)
+        self.datasets_table.verticalHeader().setMinimumSectionSize(56)
+        self.datasets_table.setIconSize(QSize(24, 24))
+        self.datasets_table.setMaximumHeight(300)
         self.datasets_table.setAlternatingRowColors(True)
         self.datasets_table.setStyleSheet("""
             QTableWidget {
@@ -270,7 +275,7 @@ class DashboardWindow(QMainWindow):
         
         # Summary info
         self.summary_label = QLabel("Load a dataset to view summary")
-        self.summary_label.setStyleSheet("color: #64748b; font-size: 12px; padding: 16px;")
+        self.summary_label.setStyleSheet("color: black; font-size: 12px; padding: 16px;")
         layout.addWidget(self.summary_label)
         
         self.summary_table = QTableWidget()
@@ -392,77 +397,87 @@ class DashboardWindow(QMainWindow):
             
             # Action buttons
             btn_layout = QHBoxLayout()
-            btn_layout.setContentsMargins(0, 0, 0, 0)
-            btn_layout.setSpacing(6)
+            btn_layout.setContentsMargins(6, 4, 6, 4)
+            btn_layout.setSpacing(10)
+            btn_layout.setAlignment(Qt.AlignCenter)
             
             analyze_btn = QPushButton("Analyze")
             analyze_btn.clicked.connect(lambda checked, did=dataset['id']: self._analyze_dataset(did))
-            analyze_btn.setMaximumWidth(80)
+            analyze_btn.setMinimumWidth(80)
+            analyze_btn.setFixedHeight(32)
+
             analyze_btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #3b82f6;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    padding: 6px 12px;
-                    font-size: 10px;
-                }
-                QPushButton:hover {
-                    background-color: #2563eb;
-                }
-            """)
+            QPushButton {
+              background-color: #3b82f6;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 10px;
+            }
+            QPushButton:hover {
+              background-color: #2563eb;
+            }
+""")
+
             
             table_btn = QPushButton("Table")
             table_btn.clicked.connect(lambda checked, did=dataset['id']: self._view_table(did))
-            table_btn.setMaximumWidth(70)
+            table_btn.setMinimumWidth(70)
+            table_btn.setFixedHeight(32)
             table_btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #8b5cf6;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    padding: 6px 12px;
-                    font-size: 10px;
-                }
-                QPushButton:hover {
-                    background-color: #7c3aed;
-                }
-            """)
+            QPushButton {
+              background-color: #8b5cf6;
+              color: white;
+              border-radius: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 10px;
+           }
+            QPushButton:hover {
+              background-color: #7c3aed;
+            }
+""")
+
             
             pdf_btn = QPushButton("PDF")
             pdf_btn.clicked.connect(lambda checked, did=dataset['id']: self._export_pdf(did))
-            pdf_btn.setMaximumWidth(70)
+            pdf_btn.setMinimumWidth(60)
+            pdf_btn.setFixedHeight(32)
             pdf_btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #f59e0b;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    padding: 6px 12px;
-                    font-size: 10px;
-                }
-                QPushButton:hover {
-                    background-color: #d97706;
-                }
-            """)
+            QPushButton {
+              background-color: #f59e0b;
+              color: white;
+              border-radius: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 10px;
+           }
+            QPushButton:hover {
+              background-color: #d97706;
+           }
+""")
+
             
             del_btn = QPushButton("Delete")
             del_btn.clicked.connect(lambda checked, did=dataset['id']: self._delete_dataset(did))
-            del_btn.setMaximumWidth(70)
+            del_btn.setMinimumWidth(70)
+            del_btn.setFixedHeight(32)
             del_btn.setStyleSheet("""
-                QPushButton {
-                    background-color: #ef4444;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    padding: 6px 12px;
-                    font-size: 10px;
-                }
-                QPushButton:hover {
-                    background-color: #dc2626;
-                }
-            """)
-            
+            QPushButton {
+              background-color: #ef4444;
+              color: white;
+              border-radius: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 10px;
+           }
+            QPushButton:hover {
+              background-color: #dc2626;
+           }
+""")
+
             btn_layout.addWidget(analyze_btn)
             btn_layout.addWidget(table_btn)
             btn_layout.addWidget(pdf_btn)
@@ -721,5 +736,9 @@ class DashboardWindow(QMainWindow):
             QTabWidget::pane {
                 border: 1px solid #e6eef6;
                 background-color: #ffffff;
+            }
+            QmessageBox {
+                background-color: #ffffff;
+                color: black;
             }
         """)
