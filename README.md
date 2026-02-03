@@ -193,7 +193,6 @@ Open `index.html` in your web browser (or serve it from a local server)
 - After analyzing a dataset, click " Export as PDF"
 - PDF will download with all analysis results
 
-  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/6d2d2a2c-7ce5-4fac-9a3b-24eeb5ed7294" />
 
 
 ## Key Features Explained
