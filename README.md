@@ -64,6 +64,7 @@ Backend
 - Virtual Environment (recommended)
 
 ### Step 1: Clone and Setup Environment
+First, clone the repository to your local machine.
 ```bash
 cd chemical_visualizer
 python -m venv venv
