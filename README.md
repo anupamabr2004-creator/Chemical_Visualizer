@@ -23,7 +23,8 @@ Chemical Visualizer is a Django-based web application that allows users to:
 -  User-specific dataset storage (each user only sees their own datasets)
 -  Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
 -  Dataset metadata storage (flowrate, pressure, temperature, equipment count)
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e7e0e5f6-5290-4ffc-842a-04ed68a049b0" />
+  <img width="1920" height="912" alt="image" src="https://github.com/user-attachments/assets/6dd9a823-6747-4783-98dc-839dfdaa1b47" />
+
 
 
 
