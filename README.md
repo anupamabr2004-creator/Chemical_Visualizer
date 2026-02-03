@@ -15,6 +15,8 @@ Chemical Visualizer is a Django-based web application that allows users to:
 - User Login with JWT token generation
 - Persistent login using JWT tokens
 - Session management
+  <img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/a73c296a-9fb0-44e5-ab9e-bbde8752fc22" />
+
 
 ### 2. **Dataset Management**
 -  CSV upload with validation
