@@ -1,7 +1,7 @@
 # Chemical Visualizer - Complete Setup Guide
 
 ## Overview
-Chemical Visualizer is a Django-based web application that allows users to:
+Chemical Visualizer is a Django-based hybrid application that allows users to:
 - Register and authenticate with JWT tokens
 - Upload CSV files containing equipment data
 - Analyze data with interactive dashboards
