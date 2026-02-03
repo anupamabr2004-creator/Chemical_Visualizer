@@ -102,6 +102,7 @@ The server will run at: **http://localhost:8000**
 
 ***Frontend (React.js)-***
 ```bash
+cd chemical_visualizer
 cd chemical-frontend
 npm install
 npm start
@@ -112,6 +113,7 @@ Web app runs at:
 
 ***Frontend ( Pyqt5)-***
 ```bash
+cd chemical_visualizer
 cd hybrid_desktop_visualizer
 pip install -r requirements.txt
 python main.py
