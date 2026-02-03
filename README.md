@@ -1,4 +1,4 @@
-# Chemical Visualizer - Complete Setup Guide
+<img width="1920" height="791" alt="image" src="https://github.com/user-attachments/assets/436681b6-5bba-4cec-8d4d-fce2f4e25bda" /><img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e48f83d-afed-4897-9811-c63aa8bd59be" /># Chemical Visualizer - Complete Setup Guide
 
 ## Overview
 Chemical Visualizer is a Django-based web application that allows users to:
@@ -23,18 +23,28 @@ Chemical Visualizer is a Django-based web application that allows users to:
 -  User-specific dataset storage (each user only sees their own datasets)
 -  Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
 -  Dataset metadata storage (flowrate, pressure, temperature, equipment count)
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e7e0e5f6-5290-4ffc-842a-04ed68a049b0" />
+
+
 
 ### 3. **Data Analysis**
 -  Real-time dataset analysis
 -  Statistical calculations (averages, distributions)
 -  Equipment type distribution breakdown
 -  Interactive dropdown to select datasets for analysis
+<img width="1920" height="910" alt="image" src="https://github.com/user-attachments/assets/13e779c1-44ad-4d4e-a41c-efb35cca77e9" />
+<img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/7b3223ae-d18e-4a55-8ac5-b4ae11928953" />
+
+
+
 
 ### 4. **PDF Export**
 -  Generate professional PDF reports
 -  Include all analysis metrics
 -  Export equipment distribution charts
 -  Formatted tables with styling
+  <img width="1920" height="789" alt="image" src="https://github.com/user-attachments/assets/8258b8de-97d8-44ae-8eb0-567060d3e2e2" />
+
 
 ### 5. **Frontend UI**
 -  Responsive design (mobile & desktop)
@@ -104,6 +114,7 @@ cd hybrid_desktop_visualizer
 pip install -r requirements.txt
 python main.py
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/10b27dcf-a3f8-471b-ac72-be036771e071" />
 
 
 ## API Endpoints
