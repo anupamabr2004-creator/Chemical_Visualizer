@@ -8,40 +8,42 @@ Chemical Visualizer is a Django-based web application that allows users to:
 - View history of last 5 uploaded datasets
 - Export analysis results as PDF documents
 
-## Features Fixed
+## Features 
 
 ### 1. **Authentication System**
-- ✅ User Registration with password hashing
-- ✅ User Login with JWT token generation
-- ✅ Persistent login using JWT tokens
-- ✅ Session management
+- User Registration with password hashing
+- User Login with JWT token generation
+- Persistent login using JWT tokens
+- Session management
 
 ### 2. **Dataset Management**
-- ✅ CSV upload with validation
-- ✅ User-specific dataset storage (each user only sees their own datasets)
-- ✅ Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
-- ✅ Dataset metadata storage (flowrate, pressure, temperature, equipment count)
+-  CSV upload with validation
+-  User-specific dataset storage (each user only sees their own datasets)
+-  Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
+-  Dataset metadata storage (flowrate, pressure, temperature, equipment count)
 
 ### 3. **Data Analysis**
-- ✅ Real-time dataset analysis
-- ✅ Statistical calculations (averages, distributions)
-- ✅ Equipment type distribution breakdown
-- ✅ Interactive dropdown to select datasets for analysis
+-  Real-time dataset analysis
+-  Statistical calculations (averages, distributions)
+-  Equipment type distribution breakdown
+-  Interactive dropdown to select datasets for analysis
 
 ### 4. **PDF Export**
-- ✅ Generate professional PDF reports
-- ✅ Include all analysis metrics
-- ✅ Export equipment distribution charts
-- ✅ Formatted tables with styling
+-  Generate professional PDF reports
+-  Include all analysis metrics
+-  Export equipment distribution charts
+-  Formatted tables with styling
 
 ### 5. **Frontend UI**
-- ✅ Responsive design (mobile & desktop)
-- ✅ Clean, modern interface
-- ✅ Real-time form validation
-- ✅ Error and success messages
-- ✅ Loading indicators
+-  Responsive design (mobile & desktop)
+-  Clean, modern interface
+-  Real-time form validation
+-  Error and success messages
+-  Loading indicators
 
-## Installation & Setup
+## Installation & Setup 
+
+Backend
 
 ### Prerequisites
 - Python 3.8+
@@ -84,32 +86,21 @@ python manage.py runserver
 
 The server will run at: **http://localhost:8000**
 
-## File Structure
+***Frontend (React.js)-***
 
-```
-chemical_visualizer/
-├── index.html                    # Frontend UI (open in browser)
-├── sample_data.csv              # Sample CSV for testing
-├── manage.py
-├── db.sqlite3                   # Database
-│
-├── accounts/                    # Authentication app
-│   ├── views.py                # Login & Register endpoints
-│   ├── urls.py                 # Auth routes
-│   └── models.py               # (using Django User model)
-│
-├── equipment/                   # Data management app
-│   ├── views.py                # Upload, Analysis, PDF export
-│   ├── models.py               # Dataset model (linked to User)
-│   ├── serializers.py          # DRF serializers
-│   └── urls.py                 # Equipment routes
-│
-└── chemical_visualizer/         # Project settings
-    ├── settings.py             # Django configuration
-    ├── urls.py                 # Main URL routing
-    ├── asgi.py
-    └── wsgi.py
-```
+cd chemical-frontend
+npm install
+npm start
+Web app runs at:
+    http://localhost:3000
+
+***Frontend ( Pyqt5)-***
+
+cd hybrid_desktop_visualizer
+pip install -r requirements.txt
+python main.py
+
+
 
 ## API Endpoints
 
@@ -171,7 +162,7 @@ Open `index.html` in your web browser (or serve it from a local server)
 - You'll see the dashboard
 
 ### 4. Upload CSV
-- Click "📤 Upload CSV"
+- Click " Upload CSV"
 - Select a CSV file matching the format
 - Click "Upload" button
 - File will be processed and added to your datasets
