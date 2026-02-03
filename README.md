@@ -33,8 +33,8 @@ Chemical Visualizer is a Django-based hybrid application that allows users to:
 -  Statistical calculations (averages, distributions)
 -  Equipment type distribution breakdown
 -  Interactive dropdown to select datasets for analysis
-<img width="1920" height="910" alt="image" src="https://github.com/user-attachments/assets/13e779c1-44ad-4d4e-a41c-efb35cca77e9" />
-<img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/7b3223ae-d18e-4a55-8ac5-b4ae11928953" />
+<img width="1920" height="787" alt="image" src="https://github.com/user-attachments/assets/b5cd6ee0-f8b7-4a19-9275-9a842d01c012" />
+ <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/7b3223ae-d18e-4a55-8ac5-b4ae11928953" />
 
 
 
