@@ -87,19 +87,21 @@ python manage.py runserver
 The server will run at: **http://localhost:8000**
 
 ***Frontend (React.js)-***
-
+```bash
 cd chemical-frontend
 npm install
 npm start
+```
+
 Web app runs at:
     http://localhost:3000
 
 ***Frontend ( Pyqt5)-***
-
+```bash
 cd hybrid_desktop_visualizer
 pip install -r requirements.txt
 python main.py
-
+```
 
 
 ## API Endpoints
