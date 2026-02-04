@@ -158,12 +158,15 @@ Valve-001,Ball,0.0,2.5,46.3
 ```
 
 **Required columns:**
+- `Equipment - numeric
 - `Flowrate` - numeric (L/min)
 - `Pressure` - numeric (bar)
 - `Temperature` - numeric (°C)
 - `Type` - text (equipment type)
 
-See `sample_data.csv` for example.
+For example,
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/525df956-835c-46a8-bd7e-689769e77832" />
+
 
 ## Frontend Usage
 
@@ -271,7 +274,7 @@ Open `index.html` in your web browser (or serve it from a local server)
 ```python
 DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = ['*']  # Restrict in production
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]  # Add your frontend URL
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]  # Add frontend URL
 SECRET_KEY = '...'  # Change in production
 ```
 
@@ -294,16 +297,7 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 
 Then update settings.py to use environment variables.
 
-## Production Deployment
 
-For production, consider:
-1. Set `DEBUG = False`
-2. Use PostgreSQL instead of SQLite
-3. Use Gunicorn or uWSGI as WSGI server
-4. Set up proper HTTPS/SSL
-5. Use environment variables for secrets
-6. Configure proper CORS origins
-7. Set up proper logging and monitoring
 
 ## Support
 
