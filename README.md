@@ -7,7 +7,7 @@ Chemical Visualizer is a Django-based hybrid application that allows users to:
 - Analyze data with interactive dashboards
 - View history of last 5 uploaded datasets
 - Export analysis results as PDF documents
-This is a hybrid analytics system where a Django REST backend serves both a React web client and a PyQt5 desktop client. The backend performs CSV-based data analysis using Pandas and exposes summary APIs. Both frontends visualize the same data using platform-appropriate tools — Chart.js for web and Matplotlib for desktop — while sharing authentication, dataset history, and PDF reporting.
+-This is a hybrid analytics system where a Django REST backend serves both a React web client and a PyQt5 desktop client. The backend performs CSV-based data analysis using Pandas and exposes summary APIs. Both frontends visualize the same data using platform-appropriate tools — Chart.js for web and Matplotlib for desktop — while sharing authentication, dataset history, and PDF reporting.
 ## Features 
 
 ### 1. **Authentication System**
