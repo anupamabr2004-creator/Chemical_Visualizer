@@ -158,7 +158,7 @@ Valve-001,Ball,0.0,2.5,46.3
 ```
 
 **Required columns:**
-- `Equipment - numeric
+- `Equipment` - numeric
 - `Flowrate` - numeric (L/min)
 - `Pressure` - numeric (bar)
 - `Temperature` - numeric (°C)
