@@ -9,51 +9,6 @@ Chemical Visualizer is a Django-based hybrid application that allows users to:
 - Export analysis results as PDF documents
 
 This is a hybrid analytics system where a Django REST backend serves both a React web client and a PyQt5 desktop client. The backend performs CSV-based data analysis using Pandas and exposes summary APIs. Both frontends visualize the same data using platform-appropriate tools — Chart.js for web and Matplotlib for desktop — while sharing authentication, dataset history, and PDF reporting. It uses SQLite to persist the last five uploaded CSV datasets. Older datasets are automatically deleted to maintain storage limits.
-## Features 
-
-### 1. **Authentication System**
-- User Registration with password hashing
-- User Login with JWT token generation
-- Persistent login using JWT tokens
-- Session management
-  <img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/a73c296a-9fb0-44e5-ab9e-bbde8752fc22" />
-
-
-### 2. **Dataset Management**
--  CSV upload with validation
--  User-specific dataset storage (each user only sees their own datasets)
--  Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
--  Dataset metadata storage (flowrate, pressure, temperature, equipment count)
-  <img width="1920" height="912" alt="image" src="https://github.com/user-attachments/assets/6dd9a823-6747-4783-98dc-839dfdaa1b47" />
-
-
-
-
-### 3. **Data Analysis**
--  Real-time dataset analysis
--  Statistical calculations (averages, distributions)
--  Equipment type distribution breakdown
--  Interactive dropdown to select datasets for analysis
-<img width="1920" height="787" alt="image" src="https://github.com/user-attachments/assets/b5cd6ee0-f8b7-4a19-9275-9a842d01c012" />
- <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/7b3223ae-d18e-4a55-8ac5-b4ae11928953" />
-
-
-
-
-### 4. **PDF Export**
--  Generate professional PDF reports
--  Include all analysis metrics
--  Export equipment distribution charts
--  Formatted tables with styling
-  <img width="1920" height="789" alt="image" src="https://github.com/user-attachments/assets/8258b8de-97d8-44ae-8eb0-567060d3e2e2" />
-
-
-### 5. **Frontend UI**
--  Responsive design (mobile & desktop)
--  Clean, modern interface
--  Real-time form validation
--  Error and success messages
--  Loading indicators
 
 ## Installation & Setup 
 
@@ -120,6 +75,53 @@ pip install -r requirements.txt
 python main.py
 ```
 <img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/154f7bb3-44be-4ec5-9c95-9acab8d3c20c" />
+## Features 
+
+### 1. **Authentication System**
+- User Registration with password hashing
+- User Login with JWT token generation
+- Persistent login using JWT tokens
+- Session management
+  <img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/a73c296a-9fb0-44e5-ab9e-bbde8752fc22" />
+
+
+### 2. **Dataset Management**
+-  CSV upload with validation
+-  User-specific dataset storage (each user only sees their own datasets)
+-  Last 5 uploaded datasets kept per user (automatic cleanup of older ones)
+-  Dataset metadata storage (flowrate, pressure, temperature, equipment count)
+  <img width="1920" height="912" alt="image" src="https://github.com/user-attachments/assets/6dd9a823-6747-4783-98dc-839dfdaa1b47" />
+
+
+
+
+### 3. **Data Analysis**
+-  Real-time dataset analysis
+-  Statistical calculations (averages, distributions)
+-  Equipment type distribution breakdown
+-  Interactive dropdown to select datasets for analysis
+<img width="1920" height="787" alt="image" src="https://github.com/user-attachments/assets/b5cd6ee0-f8b7-4a19-9275-9a842d01c012" />
+ <img width="1920" height="909" alt="image" src="https://github.com/user-attachments/assets/7b3223ae-d18e-4a55-8ac5-b4ae11928953" />
+
+
+
+
+### 4. **PDF Export**
+-  Generate professional PDF reports
+-  Include all analysis metrics
+-  Export equipment distribution charts
+-  Formatted tables with styling
+  <img width="1920" height="789" alt="image" src="https://github.com/user-attachments/assets/8258b8de-97d8-44ae-8eb0-567060d3e2e2" />
+
+
+### 5. **Frontend UI**
+-  Responsive design (mobile & desktop)
+-  Clean, modern interface
+-  Real-time form validation
+-  Error and success messages
+-  Loading indicators
+
+
 
 
 
