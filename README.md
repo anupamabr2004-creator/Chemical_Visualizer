@@ -75,7 +75,8 @@ pip install -r requirements.txt
 python main.py
 ```
 <img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/154f7bb3-44be-4ec5-9c95-9acab8d3c20c" />
-## Features 
+
+## ***Features***
 
 ### 1. **Authentication System**
 - User Registration with password hashing
