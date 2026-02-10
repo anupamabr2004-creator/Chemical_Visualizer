@@ -1,13 +1,13 @@
-# 🚀 Quick Setup Checklist - Charts & Features Edition
+#  Quick Setup Checklist - Charts & Features Edition
 
-## ✅ Pre-Install Checks
+##  Pre-Install Checks
 
 - [ ] Node.js installed? (`node --version`)
 - [ ] npm installed? (`npm --version`)
 - [ ] Python venv activated? (See `venv\Scripts\activate`)
 - [ ] Django running on port 8000? (`python manage.py runserver`)
 
-## 📦 Step 1: Install New Dependencies
+##  Step 1: Install New Dependencies
 
 ```bash
 cd c:\Users\Surjeet Kumar\chemical_visualizer\chemical-frontend
@@ -23,7 +23,7 @@ npm install
 **Expected time:** 2-3 minutes
 **Expected output:** "added X packages, up to date..."
 
-## ▶️ Step 2: Start Backend (Terminal 1)
+##  Step 2: Start Backend (Terminal 1)
 
 ```bash
 cd c:\Users\Surjeet Kumar\chemical_visualizer
@@ -36,9 +36,9 @@ python manage.py runserver
 Starting development server at http://127.0.0.1:8000/
 ```
 
-✅ **Backend ready when you see the message above**
+ **Backend ready when you see the message above**
 
-## ▶️ Step 3: Start Frontend (Terminal 2)
+##  Step 3: Start Frontend (Terminal 2)
 
 ```bash
 cd c:\Users\Surjeet Kumar\chemical_visualizer\chemical-frontend
@@ -52,18 +52,18 @@ You can now view chemical-visualizer-frontend in the browser.
 Local: http://localhost:3000
 ```
 
-✅ **Frontend ready when you see "Compiled successfully!"**
+ **Frontend ready when you see "Compiled successfully!"**
 
-## 🌐 Step 4: Open Browser
+##  Step 4: Open Browser
 
 **URL:** http://localhost:3000
 
 You should see the login page with:
-- ⚗️ Chemical Visualizer title
+-  Chemical Visualizer title
 - Username/Password input fields
 - Login and Register buttons
 
-## 🧪 Step 5: Test New Features
+##  Step 5: Test New Features
 
 ### Test 1: Upload CSV
 ```
@@ -73,18 +73,18 @@ You should see the login page with:
 4. Wait for success message
 ```
 
-✅ **Pass if:** File appears in "My Datasets" list
+ **Pass if:** File appears in "My Datasets" list
 
 ### Test 2: View Charts
 ```
-1. Click "📊 Analyze" on the uploaded dataset
+1. Click " Analyze" on the uploaded dataset
 2. Look for statistics cards (4 cards with metrics)
 3. Look for two charts:
    - Doughnut chart (Equipment Distribution)
    - Bar chart (Average Parameters)
 ```
 
-✅ **Pass if:** Charts render with data and colors
+ **Pass if:** Charts render with data and colors
 
 ### Test 3: View Data Table
 ```
@@ -92,15 +92,15 @@ You should see the login page with:
 2. Look for table with metrics and equipment breakdown
 ```
 
-✅ **Pass if:** Table displays all metrics correctly
+ **Pass if:** Table displays all metrics correctly
 
 ### Test 4: View History
 ```
-1. Click "📋 History (N)" button (N = number of datasets)
+1. Click " History (N)" button (N = number of datasets)
 2. Dropdown menu appears showing recent uploads
 ```
 
-✅ **Pass if:** List shows up to 5 recent uploads
+ **Pass if:** List shows up to 5 recent uploads
 
 ### Test 5: Export PDF
 ```
@@ -109,9 +109,9 @@ You should see the login page with:
 3. Check Downloads folder
 ```
 
-✅ **Pass if:** PDF file appears in Downloads with charts
+ **Pass if:** PDF file appears in Downloads with charts
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Issue: npm install fails
 ```bash
@@ -141,58 +141,58 @@ http://localhost:8000/api/auth/login/
 # Should show API response, not connection refused
 ```
 
-## 📊 Feature Summary
+##  Feature Summary
 
 | Feature | Button | What It Does |
 |---------|--------|------------|
-| Analyze | 📊 Analyze | Shows charts & statistics |
-| Table | 📋 Table | Shows data in table format |
-| History | 📋 History | Shows last 5 uploads |
-| PDF Export | 📥 PDF | Downloads PDF report |
-| Full PDF | 📥 Export PDF (with Charts) | PDF with all visualizations |
+| Analyze |  Analyze | Shows charts & statistics |
+| Table |  Table | Shows data in table format |
+| History |  History | Shows last 5 uploads |
+| PDF Export |  PDF | Downloads PDF report |
+| Full PDF |  Export PDF (with Charts) | PDF with all visualizations |
 
-## 📁 Files Modified
+##  Files Modified
 
 ```
 chemical-frontend/
-├── package.json          ✏️ Updated dependencies
+├── package.json          Updated dependencies
 ├── src/components/
-│   ├── Dashboard.js      ✏️ Added charts & features
-│   └── Dashboard.css     ✏️ New styles
+│   ├── Dashboard.js      Added charts & features
+│   └── Dashboard.css      New styles
 ```
 
-## 📚 Documentation Files
+##  Documentation Files
 
 - `CHARTS_FEATURES.md` - Detailed feature documentation
 - `RUN_NOW.md` - Complete setup guide
 - `FRONTEND_SETUP.md` - Frontend installation guide
 - `README_FRONTEND.md` - Quick reference
 
-## ✨ What's New
+##  What's New
 
-✅ Chart.js integration for visualizations
-✅ Doughnut chart for equipment distribution
-✅ Bar chart for average parameters
-✅ Data table view for all metrics
-✅ History dropdown showing last 5 uploads
-✅ Enhanced PDF export with charts
-✅ Responsive design for mobile/tablet
-✅ Professional styling with colors and animations
+ Chart.js integration for visualizations
+ Doughnut chart for equipment distribution
+ Bar chart for average parameters
+ Data table view for all metrics
+ History dropdown showing last 5 uploads
+ Enhanced PDF export with charts
+ Responsive design for mobile/tablet
+ Professional styling with colors and animations
 
-## 🎯 Success Criteria
+##  Success Criteria
 
 You'll know everything works when:
 
-1. ✅ Login/Register works
-2. ✅ Can upload CSV file
-3. ✅ Clicking "Analyze" shows 2 charts
-4. ✅ Clicking "Table" shows data table
-5. ✅ Clicking "History" shows dropdown with datasets
-6. ✅ Clicking "Export PDF" downloads PDF with charts
-7. ✅ All buttons respond with no console errors
-8. ✅ Charts look colorful and properly formatted
+1.  Login/Register works
+2.  Can upload CSV file
+3.  Clicking "Analyze" shows 2 charts
+4.  Clicking "Table" shows data table
+5.  Clicking "History" shows dropdown with datasets
+6.  Clicking "Export PDF" downloads PDF with charts
+7.  All buttons respond with no console errors
+8.  Charts look colorful and properly formatted
 
-## 🚀 Ready to Go!
+##  Ready to Go!
 
 ```bash
 # One final check - run these commands:
