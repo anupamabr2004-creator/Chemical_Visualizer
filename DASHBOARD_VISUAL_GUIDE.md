@@ -1,23 +1,23 @@
-# 📊 Dashboard Features - Visual Guide
+#  Dashboard Features - Visual Guide
 
 ## Dashboard Layout
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  ⚗️ Dashboard                      Welcome, username!  [Logout] │
+│   Dashboard                      Welcome, username!  [Logout] │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  📤 Upload CSV                                                  │
+│   Upload CSV                                                  │
 │  ┌────────────────────────────────────┐                        │
 │  │ Choose file...    [Upload Button]  │                        │
 │  └────────────────────────────────────┘                        │
 │  Help: Upload a CSV with columns: Equipment, Type...            │
 │                                                                  │
-│  📊 My Datasets            [📋 History (2)]                     │
+│   My Datasets            [ History (2)]                     │
 │  ┌──────────────────────────────────────────────────────────┐  │
 │  │ sample_data.csv                                          │  │
-│  │ 📅 Uploaded: 2/2/2026    📦 Equipment: 50 items         │  │
-│  │ [📊 Analyze]  [📋 Table]  [📥 PDF]                      │  │
+│  │  Uploaded: 2/2/2026     Equipment: 50 items         │  │
+│  │ [ Analyze]  [Table]  [ PDF]                      │  │
 │  └──────────────────────────────────────────────────────────┘  │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
@@ -29,7 +29,7 @@
 
 ```
 ┌─────────────────────────────────────┐
-│  📤 Upload CSV                      │
+│   Upload CSV                      │
 ├─────────────────────────────────────┤
 │  [Choose File...]  [Upload Button]  │
 │                                     │
@@ -55,7 +55,7 @@ Filter1,Filter,30.0,10.0,50.0
 ## Feature 2: History Dropdown
 
 ```
-[📋 History (2)] ◄── Click to open/close
+[ History (2)] ◄── Click to open/close
     ┌─────────────────────────┐
     │ Last 2 Uploads          │
     ├─────────────────────────┤
@@ -77,19 +77,19 @@ Filter1,Filter,30.0,10.0,50.0
 
 ## Feature 3: Data Table View
 
-**Before clicking [📋 Table]**
+**Before clicking [ Table]**
 ```
 ┌─────────────────────────────────────┐
 │ sample_data.csv                     │
-│ 📅 2/2/2026   📦 50 items          │
-│ [📊 Analyze]  [📋 Table]  [📥 PDF] │
+│  2/2/2026    50 items          │
+│ [ Analyze]  [Table]  [PDF] │
 └─────────────────────────────────────┘
 ```
 
-**After clicking [📋 Table]**
+**After clicking [ Table]**
 ```
 ┌──────────────────────────────────────┐
-│ 📋 Data Table: sample_data.csv  [✕] │
+│  Data Table: sample_data.csv  [✕] │
 ├──────────────────────────────────────┤
 │ Metric               │ Value         │
 ├──────────────────────┼───────────────┤
@@ -110,7 +110,7 @@ Filter1,Filter,30.0,10.0,50.0
 
 ## Feature 4: Analysis with Charts
 
-**Click [📊 Analyze]**
+**Click [ Analyze]**
 
 ### Step 1: Statistics Cards
 ```
@@ -132,7 +132,7 @@ Filter1,Filter,30.0,10.0,50.0
 ```
 Left Side: Equipment Distribution   Right Side: Average Parameters
 ┌──────────────────────────┐      ┌──────────────────────────┐
-│  📊 Equipment            │      │  📈 Average Parameters   │
+│   Equipment            │      │   Average Parameters   │
 │  Distribution            │      │                          │
 │                          │      │    30 ┌─────────┐        │
 │      ╱─────╲             │      │       │    │    │        │
@@ -171,8 +171,8 @@ Left Side: Equipment Distribution   Right Side: Average Parameters
 
 ```
 ┌──────────────────────────────────────┐
-│ [📥 Export as PDF (with Charts)]    │
-│ [✕ Close Analysis]                  │
+│ [ Export as PDF (with Charts)]    │
+│ [ Close Analysis]                  │
 └──────────────────────────────────────┘
 ```
 
@@ -270,14 +270,14 @@ START
 
 | Button | Icon | Action | Result |
 |--------|------|--------|--------|
-| Upload | 📤 | Upload CSV file | File saved to database |
-| Analyze | 📊 | View analysis | Shows charts & stats |
-| Table | 📋 | View data | Shows data table |
-| PDF | 📥 | Quick export | Downloads PDF |
-| History | 📋 | Show recent | Dropdown menu |
-| Export PDF | 📥 | Full export | PDF with charts |
-| Close | ✕ | Hide section | Closes table/analysis |
-| Logout | 🚪 | Sign out | Returns to login |
+| Upload |  | Upload CSV file | File saved to database |
+| Analyze |  | View analysis | Shows charts & stats |
+| Table |  | View data | Shows data table |
+| PDF |  | Quick export | Downloads PDF |
+| History |  | Show recent | Dropdown menu |
+| Export PDF |  | Full export | PDF with charts |
+| Close |  | Hide section | Closes table/analysis |
+| Logout |  | Sign out | Returns to login |
 
 ---
 
@@ -395,18 +395,18 @@ Loading States:
 [Loading...]   ← Shows while fetching data
 
 Success:
-✅ File uploaded successfully!
-✅ PDF exported successfully!
+ File uploaded successfully!
+ PDF exported successfully!
 
 Error:
-❌ Error loading datasets
-❌ Error exporting PDF
+ Error loading datasets
+ Error exporting PDF
 
 Info:
-ℹ️ Generating PDF...
-ℹ️ No datasets uploaded yet
+ Generating PDF...
+ No datasets uploaded yet
 ```
 
 ---
 
-**This visual guide covers all dashboard features and their layout!** 🎨
+**This visual guide covers all dashboard features and their layout!** 
