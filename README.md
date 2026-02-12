@@ -1,4 +1,4 @@
-# Chemical Visualizer - Complete Setup Guide (**UI polished and improved since submission**)
+# Chemical Visualizer - Complete Setup Guide <span style="color: red; font-weight:bold;">(**UI polished and improved since submission**)</span>
 
 ## Overview
 Chemical Visualizer is a Django-based hybrid application that allows users to:
