@@ -74,7 +74,8 @@ cd hybrid_desktop_visualizer
 pip install -r requirements.txt
 python main.py
 ```
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a88d6a8d-82ab-4bdf-89aa-4f13f5c4bf77" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5bc8f648-d69c-43b4-b63b-7a43784867c4" />
+
 
 
 ## ***Features***
