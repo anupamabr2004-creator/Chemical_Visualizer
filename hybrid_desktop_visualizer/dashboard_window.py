@@ -142,7 +142,7 @@ class DashboardWindow(QMainWindow):
                 color:black;
             }
         """)
-        upload_card.setMaximumHeight(120)
+        upload_card.setMaximumHeight(160)
         upload_layout = QVBoxLayout()
         upload_layout.setContentsMargins(20, 16, 20, 16)
         upload_layout.setSpacing(12)
@@ -684,7 +684,7 @@ class DashboardWindow(QMainWindow):
             }
             QPushButton {
                 background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
-                color: white;
+                color: black;
                 border: none;
                 border-radius: 8px;
                 padding: 10px 20px;
