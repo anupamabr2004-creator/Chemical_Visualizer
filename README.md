@@ -1,4 +1,4 @@
-# Chemical Visualizer - Complete Setup Guide
+# Chemical Visualizer - Complete Setup Guide (**improved UI**)
 
 ## Overview
 Chemical Visualizer is a Django-based hybrid application that allows users to:
@@ -74,7 +74,8 @@ cd hybrid_desktop_visualizer
 pip install -r requirements.txt
 python main.py
 ```
-<img width="1920" height="1016" alt="image" src="https://github.com/user-attachments/assets/154f7bb3-44be-4ec5-9c95-9acab8d3c20c" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a88d6a8d-82ab-4bdf-89aa-4f13f5c4bf77" />
+
 
 ## ***Features***
 
