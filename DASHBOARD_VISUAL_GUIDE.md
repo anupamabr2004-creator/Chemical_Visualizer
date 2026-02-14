@@ -241,17 +241,17 @@ START
   │
   ├─► [View Options]
   │      │
-  │      ├─► Option 1: Click [📊 Analyze]
+  │      ├─► Option 1: Click [ Analyze]
   │      │      ├─► See statistics
   │      │      ├─► See charts
-  │      │      ├─► Click [📥 Export as PDF]
+  │      │      ├─► Click [ Export as PDF]
   │      │      └─► PDF downloads
   │      │
-  │      ├─► Option 2: Click [📋 Table]
+  │      ├─► Option 2: Click [ Table]
   │      │      ├─► See data table
   │      │      └─► Click [✕ Close]
   │      │
-  │      └─► Option 3: Click [📋 History]
+  │      └─► Option 3: Click [ History]
   │             └─► See recent uploads
   │
   ├─► [More Operations]
@@ -352,7 +352,7 @@ Color  Parameter        Hex Code
 Each Card Shows:
 ┌──────────────────┐
 │ Label (Icon)     │  Example:
-│ (Smaller text)   │  📦 Total Equipment
+│ (Smaller text)   │   Total Equipment
 │                  │  50
 │    VALUE         │
 │    (Large)       │
@@ -361,7 +361,7 @@ Each Card Shows:
 With Units:
 ┌──────────────────┐
 │ Label (Icon)     │  Example:
-│ (Smaller text)   │  💧 Avg Flowrate
+│ (Smaller text)   │   Avg Flowrate
 │                  │  25.5 L/min
 │ VALUE  UNIT      │
 │ (Large) (small)  │
